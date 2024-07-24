@@ -1,0 +1,392 @@
+:root{
+    --color-prin: #FFF;
+    --color-sec: #CCC;
+    --color-terc: #8b8b8b;
+    --color-black: #000;
+    --color-box-shadow: #000;
+    --color-grey: rgb(82, 82, 82)
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;;
+}
+
+.container{
+    padding: 0 60px;
+}
+
+.container-main{
+    padding: 60px;
+    padding-top: 120px;
+}
+
+.none-icon{
+    font-size: 0px;
+}
+
+.logic-save{
+    color: #000;
+}
+
+.none{
+    display: none;
+}
+
+.black-color{
+    color: #000;
+}
+
+#edit-button{
+    color: var(--color-prin);
+    background-color: var(--color-black);
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s all;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
+#edit-button:hover{
+    color: var(--color-black);
+    border: 1px solid var(--color-black);
+    background-color: transparent;
+}
+
+.v-hidden{
+    visibility: hidden;
+}
+
+.remove-from-favorites{
+    background-color: transparent;
+    color: var(--color-black);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s all;
+    padding: 5px 10px;
+    border: none;
+    position: relative;
+    z-index: 100;
+    border-radius: 7px;
+}
+
+.remove-from-favorites:hover{
+    background-color: var(--color-terc);
+}
+
+/*Header*/
+
+header{
+    min-height: 35vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), 
+    url('https://wallpapercave.com/wp/wp5347655.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-titles{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    top: 16.5vh;
+}
+
+.search-titles .title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-titles .title h1, .search-titles .title .favorites-button{
+    color: var(--color-prin);
+}
+
+.search-titles .title h1{
+    font-size: 2.4rem;
+}
+
+.search-titles .title .favorites-button{
+    font-size: 1.5rem;
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    transition: 0.2s all;
+    cursor: pointer;
+}
+
+.search-titles .title .favorites-button:hover{
+    color: var(--color-terc);
+}
+
+.search-titles .container-search-input{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-titles .container-search-input input{
+    width: 100%;
+    padding: 15px 10px;
+    outline: none;
+    border: none;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: var(--color-prin);
+}
+
+.search-titles .container-search-input button{
+    background-color: var(--color-prin);
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/*Main*/
+
+main{
+    min-height: 65vh;
+    background-color: var(--color-sec);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/*Notification*/
+
+.title-not-found{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: var(--color-terc);
+}
+
+.icon-film{
+    font-size: 60px;
+}
+
+/*titles cards*/
+
+.title-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: var(--color-prin);
+    border-radius: 5px;
+    min-width: 300px;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+.title-card:hover{
+    transform: scale(1.02);
+}
+
+.title-card .poster{
+    max-width: 300px;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.title-card .title{
+    width: 100%;
+    text-align: start;
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.title-card .date{
+    width: 100%;
+    text-align: start;
+}
+
+/*Descriptive titles*/
+
+.title-container{
+    background-color: var(--color-prin);
+    width: 75%;
+    min-height: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.img-title{
+    flex: 1;
+    border-radius: 5px;
+    max-width: 300px;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.title-information{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title-and-save{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+}
+
+.save-button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.date-place-note{
+    color: var(--color-grey);
+}
+
+.rating{
+    font-size: 22px;
+    color: var(--color-black);
+}
+
+.film-production,.additional-information{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.title-description{
+    width: 80%;
+}
+
+
+/*response*/
+
+@media(max-width: 1024px){
+
+    .search-titles{
+        width: 75%;
+    }
+
+    .title-container{
+        width: 100%;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .search-titles{
+        width: 100%;
+    }
+
+    .container{
+        padding: 0 40px;
+    }
+
+    .title-card{
+        max-width: 300px;
+        width: 100%;
+    }
+
+    .title-card .title{
+        font-size: 3vmin;
+        white-space: normal;
+        word-wrap: break-word;
+        -webkit-line-break: after-white-space;
+    }
+
+    .title-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+@media(max-width: 480px){
+    
+    .search-titles{
+        width: 100%;
+    }
+
+    .container{
+        padding: 0 20px;
+    }
+
+    .container-main{
+        padding: 30px;
+        padding-top: 120px;
+    }
+
+    .search-titles .title h1{
+        font-size: 7.4vmin;
+    }
+    
+    .search-titles .title .favorites-button,#edit-button{
+        font-size: 5.5vmin;
+    }
+
+    .title-card{
+        min-width: 200px;
+    }
+
+    .title-card .poster{
+        max-width: 200px;
+        width: 100%;
+        height: 250px;
+    }
+
+    .title-card .title{
+        font-size: 4.5vmin;
+        min-width: 0px;
+    }
+
+    .title-card .date{
+        font-size: 3.9vmin;
+    }
+
+    .title-and-save .title{
+        font-size: 25px;
+    }
+
+    .img-title{
+        width: 100%;
+    }
+
+    .title-and-save{
+        flex-direction: column;
+    }
+
+    .title-description{
+        width: 100%;
+    }
+
+}
+
